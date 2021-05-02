@@ -4,8 +4,8 @@ This repo is to showcae my skilss to PropKings.
 
 ## Installation
 
-In the root folder, run "npm i" to install the neccessary modules. To install
-the NextJS modules, "cd land-client" and run "npm i"
+In the root folder, run "npm i" to install the necessary modules. To install the
+NextJS modules, "cd land-client" and run "npm i"
 
 ## Usage
 
