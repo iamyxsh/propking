@@ -68,6 +68,11 @@ const AddLand = ({ setFlag, flag }) => {
 				}, 5000)
 			} else {
 				setErr("")
+				setName("")
+				setArea("")
+				setState("")
+				setCity("")
+				setCountry("")
 				setFlag(!flag)
 				setOpen(false)
 			}

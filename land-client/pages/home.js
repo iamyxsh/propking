@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import fetchCall from "../utils/fetchCall"
 
-import { Grid, makeStyles } from "@material-ui/core"
+import { Grid, makeStyles, Typography } from "@material-ui/core"
 import LandItem from "../components/Home/LandItem"
 import AddLand from "../components/Home/AddLand"
 
@@ -37,11 +37,17 @@ const Home = () => {
 			alignItems="center"
 			style={{ minHeight: "100vh", position: "relative" }}
 		>
-			{lands.map((land, ind) => (
-				<Grid item key={ind}>
-					<LandItem land={land} setFlag={(val) => setFlag(val)} flag={flag} />
-				</Grid>
-			))}
+			{lands.length > 0 ? (
+				lands.map((land, ind) => (
+					<Grid item key={ind}>
+						<LandItem land={land} setFlag={(val) => setFlag(val)} flag={flag} />
+					</Grid>
+				))
+			) : (
+				<Typography variant="h3">
+					Opps, no properties yet. Add some properties.
+				</Typography>
+			)}
 			<div className={classes.add}>
 				<AddLand setFlag={(val) => setFlag(val)} flag={flag} />
 			</div>

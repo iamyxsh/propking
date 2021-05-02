@@ -46,6 +46,9 @@ export default function ButtonAppBar({ reload, setReload }) {
 						onClick={() => router.push("/home")}
 						variant="h6"
 						className={classes.title}
+						style={{
+							cursor: "pointer",
+						}}
 					>
 						PropKing
 					</Typography>
