@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useRouter } from "next/router"
 
 import { makeStyles } from "@material-ui/core/styles"
@@ -41,6 +41,13 @@ export default function SignIn({ setReload, reload }) {
 	const [email, setEmail] = useState("")
 	const [password, setPass] = useState("")
 	const [err, setErr] = useState("")
+
+	useEffect(() => {
+		const token = localStorage.getItem("token")
+		if (token) {
+			router.push("/home")
+		}
+	}, [])
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
@@ -117,6 +124,15 @@ export default function SignIn({ setReload, reload }) {
 							Sign In
 						</Button>
 					</form>
+				</Grid>
+				<Grid item>
+					<Typography
+						style={{ fontSize: "1.5rem", color: "#219EBC", cursor: "pointer" }}
+						onClick={() => router.push("/home")}
+						variant="subtitle1"
+					>
+						List Properties
+					</Typography>
 				</Grid>
 			</Grid>
 		</Container>
